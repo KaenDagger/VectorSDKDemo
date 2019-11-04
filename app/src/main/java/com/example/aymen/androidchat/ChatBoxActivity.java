@@ -43,7 +43,7 @@ public class ChatBoxActivity extends AppCompatActivity {
         Nickname= (String)getIntent().getExtras().getString(MainActivity.NICKNAME);
         //connect you socket client to the server
         try {
-            socket = IO.socket("http://192.168.1.3:3000");
+            socket = IO.socket("http://192.168.43.86:3000");
             socket.connect();
             socket.emit("join", Nickname);
         } catch (URISyntaxException e) {
