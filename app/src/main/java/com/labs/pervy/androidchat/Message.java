@@ -1,4 +1,4 @@
-package com.example.aymen.androidchat;
+package com.labs.pervy.androidchat;
 
 /**
  * Created by Aymen on 08/06/2018.

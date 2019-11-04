@@ -1,4 +1,4 @@
-package com.example.aymen.androidchat;
+package com.labs.pervy.androidchat;
 
 import org.junit.Test;
 
