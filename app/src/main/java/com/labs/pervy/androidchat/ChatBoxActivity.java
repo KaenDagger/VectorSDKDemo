@@ -31,6 +31,7 @@ public class ChatBoxActivity extends AppCompatActivity {
     //declare socket object
     private Socket socket;
 
+    private String testUrl = "http://192.168.43.86:3000";
     public String Nickname ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,10 @@ public class ChatBoxActivity extends AppCompatActivity {
         send = (Button)findViewById(R.id.send);
         // get the nickame of the user
         Nickname= (String)getIntent().getExtras().getString(MainActivity.NICKNAME);
+        String server = getIntent().getStringExtra(MainActivity.SERVER);
         //connect you socket client to the server
         try {
-            socket = IO.socket("http://192.168.43.86:3000");
+            socket = IO.socket(server);
             socket.connect();
             socket.emit("join", Nickname);
         } catch (URISyntaxException e) {
