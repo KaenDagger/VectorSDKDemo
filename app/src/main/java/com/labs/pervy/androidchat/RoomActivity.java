@@ -38,5 +38,16 @@ public class RoomActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        btnChatOthers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(RoomActivity.this, ChatBoxActivity.class);
+                i.putExtra(SERVER, serverUrl);
+                i.putExtra(TYPE, "decen");
+                i.putExtra(NICKNAME, nick);
+                startActivity(i);
+            }
+        });
     }
 }

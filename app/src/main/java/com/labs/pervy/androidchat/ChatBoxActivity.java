@@ -43,6 +43,7 @@ public class ChatBoxActivity extends AppCompatActivity {
         // get the nickame of the user
         Nickname= (String)getIntent().getExtras().getString(MainActivity.NICKNAME);
         String server = getIntent().getStringExtra(MainActivity.SERVER);
+        final String type = getIntent().getStringExtra(RoomActivity.TYPE);
         //connect you socket client to the server
         try {
             socket = IO.socket(server);
@@ -67,7 +68,7 @@ public class ChatBoxActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //retrieve the nickname and the message content and fire the event messagedetection
                 if(!messagetxt.getText().toString().isEmpty()){
-                    socket.emit("messagedetection",Nickname,messagetxt.getText().toString());
+                    socket.emit("messagedetection",Nickname,messagetxt.getText().toString(),type);
 
                     messagetxt.setText(" ");
                 }
